@@ -1,0 +1,60 @@
+Final Project Grading Rubric
+
+Mai
+
+Total Grade
+195/200
+
+
+Code: 95
+Paper: 100
+
+Database Schema 
+35/ 40
+Great database schema. I just need the field types added to this for full points. This is really easy and clear to read and understand what is going on. I like the spatial join.
+
+SQL Code
+Create Table Statements
+20/20
+These are great
+ 
+
+SQL Query 
+40/40
+Very good code. Really good use of code here. CTE and a subquery. 
+
+WITH total_trips_weekday as
+(
+SELECT to_char(start_time, 'day') as trip_day,
+COUNT(trip_id) as total
+FROM niceride_starts
+GROUP BY to_char(start_time, 'day')
+)					 
+SELECT a.trip_day, (a.total/b.total_trips::FLOAT)*100 as percent_usage					 
+FROM total_trips_weekday a, 
+	(
+		SELECT COUNT(trip_id) as total_trips
+		FROM niceride_starts
+ 	) as b
+ORDER BY (a.total/b.total_trips::FLOAT)*100 DESC;
+
+Don't use select *
+
+Paper  
+10/100
+
+
+Content 
+50/50
+Really good project and the paper was easy to read and I found your analyses compelling.
+
+Methods
+20/20
+
+
+Result & Challenges
+20/20
+So yes databases are very rigid in the names of columns so that can be really difficult. Glad you used another program like Python to modify the data. Pandas can load data directly into postgreSQL and Psycopg2 can do a lot of querying or you can do a query directly into a dataframe (pandas or geopandas).
+
+Readability
+10/10

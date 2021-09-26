@@ -1,0 +1,17 @@
+Mai
+
+
+Score 48/50
+
+Most of your table and field names are appropriate. I would spend some time renaming them
+
+"Nice rid trip data" --> nice_ride_trips
+"start time" --> start_time
+
+the field trip_id is nice and unique?
+I would still expect to see a date in there. 
+Why is "birth year" a field?
+
+Do some work cleaning up the field name in ACS table and the Minneapolis streets table. 
+
+You probably need to specify the joins. Census block groups don't join they spatial join to nice ride data.

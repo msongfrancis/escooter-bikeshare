@@ -1,0 +1,8 @@
+Maisong
+
+Score 25/25
+
+
+Well done and a very nice document. Some small comments. No reason to do a lot of work preparing your aggregate data from monthly to annual. Just make sure you have a good group-by column.
+It's always to good to prep your data, but make sure there is a good data dictionary to describe all your fields and variable before you load. I really like the analysis plan.
+You will need to have some data that works on a tabular join.
